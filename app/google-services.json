@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1051539232443",
+    "firebase_url": "https://krishikart-fd5b1.firebaseio.com",
+    "project_id": "krishikart-fd5b1",
+    "storage_bucket": "krishikart-fd5b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051539232443:android:1fbe6e1d9c2c763db97b9e",
+        "android_client_info": {
+          "package_name": "com.Krishi.krishikart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051539232443-6a4v97aqnoj6bknkkn9pb9mughdbm6tj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Krishi.krishikart",
+            "certificate_hash": "a6277beb9c62f8cc24dcbd8a0c1ae709c1a2aa6d"
+          }
+        },
+        {
+          "client_id": "1051539232443-2p2idsk6afvpl8tikoc7jgffstu3qfjp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOE6m9jXREGwPVcev9ZPFFKFTOK_3p2-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1051539232443-2p2idsk6afvpl8tikoc7jgffstu3qfjp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
