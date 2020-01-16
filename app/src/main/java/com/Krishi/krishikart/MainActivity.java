@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
                     //switchFragment(fragment);
                     return true;
                 case R.id.profile:
-                    //fragment = new ProfileFragment();
-                    //switchFragment(fragment);
+                    fragment = new ProfileFragment();
+                    switchFragment(fragment);
                     return true;
             }
             return false;
