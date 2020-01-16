@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         bottomNavigationView=findViewById(R.id.bottomnavigation);
         frameLayout=findViewById(R.id.framelayout);
+        fragment=new HomeFragment();
+        switchFragment(fragment);
         bottomNavigationView.setOnNavigationItemSelectedListener(listView);
     }
     private BottomNavigationView.OnNavigationItemSelectedListener listView=new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -45,8 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.post:
                     //fragment = new PostFragment();
                     //switchFragment(fragment);
-                    //return true;
-                    break;
+                    return true;
                 case R.id.Add:
                     //fragment = new AddFragment();
                     //switchFragment(fragment);

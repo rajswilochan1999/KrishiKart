@@ -14,7 +14,7 @@ public class SplashActivity extends AppCompatActivity {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.activity_splash);
             new Handler().postDelayed(new Runnable() {
                 public void run() {
                     FirebaseAuth auth=FirebaseAuth.getInstance();
@@ -30,6 +30,6 @@ public class SplashActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 }
-            }, 1500);
+            }, 5000);
         }
     }
