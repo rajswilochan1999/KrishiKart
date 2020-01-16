@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -45,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
                     switchFragment(fragment);
                     return true;
                 case R.id.post:
-                    //fragment = new PostFragment();
-                    //switchFragment(fragment);
+                    fragment = new PostFragment();
+                    switchFragment(fragment);
                     return true;
                 case R.id.Add:
                     //fragment = new AddFragment();
@@ -60,4 +62,8 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     };
+    public void floatingfunction(View view){
+        Intent intent=new Intent(MainActivity.this,NewpostActivity.class);
+        startActivity(intent);
+    }
 }

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/appbarlayout"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="6dip">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@id/circularimage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="6dp"
+        app:civ_border_width="0.5dp"
+        app:civ_border_color="#FF000000"
+        android:layout_marginEnd="6dp"
+        android:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@id/postusername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_marginLeft="70dp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:text="Jan Koum"
+        android:textStyle="bold"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/imagepost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:drawableLeft="@android:drawable/ic_menu_add"
+        android:backgroundTint="#138510"
+        android:text="Add Image"
+        android:textAllCaps="false"
+        android:layout_alignParentEnd="true"
+        android:onClick="addimage" />
+
+    <EditText
+        android:id="@+id/postmsg"
+        android:layout_below="@+id/imagepost"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:hint="write here"
+        android:layout_marginLeft="70dp"
+        android:inputType="textMultiLine"
+        android:gravity="top"
+        android:background="@null"
+        android:textSize="20dp" />
+    <TextView
+        android:layout_below="@+id/postmsg"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@android:color/black"
+        android:layout_marginLeft="70dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sendpost"
+        android:layout_below="@+id/postmsg"
+        android:layout_marginTop="10dp"
+        android:background="#138510"
+        android:text="POST" />
+
+    <com.theartofdev.edmodo.cropper.CropImageView
+        android:id="@+id/cropImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sendpost"
+        android:layout_marginTop="10dp" />
+
+</RelativeLayout>

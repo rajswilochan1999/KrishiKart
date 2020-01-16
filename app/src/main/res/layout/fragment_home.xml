@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_above="@+id/bottomnavigation"
-    android:layout_marginTop="@android:dimen/app_icon_size"
     tools:context=".HomeFragment">
 
    <androidx.recyclerview.widget.RecyclerView
