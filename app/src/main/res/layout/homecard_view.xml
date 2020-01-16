@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:cardCornerRadius="12dp"
+        app:contentPadding="6dp"
+        android:layout_margin="3dp">
+
+        <ImageView
+            android:id="@+id/productimage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/productname"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:background="#80FFFFFF"
+            android:text="Apple"
+            android:textColor="#138510"/>
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kalpesh"
+            android:textStyle="bold"
+            android:layout_marginLeft="110dp"/>
+        <TextView
+            android:id="@+id/phonenumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/phone"
+            android:drawableTint="#138510"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="30dp"
+            android:text="1234567890"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="110dp"
+            android:textSize="12dp"
+            android:text="Quantity :"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/productquantity"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="165dp"
+            android:textSize="12dp"
+            android:text="10"
+            android:textColor="#138510"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="110dp"
+            android:textSize="12dp"
+            android:text="(in Quintal)" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="210dp"
+            android:textSize="12dp"
+            android:text="Price-Range :"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="287dp"
+            android:textSize="12dp"
+            android:text="\u20B9"
+            android:textColor="#138510"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pricerange"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="295dp"
+            android:textSize="12dp"
+            android:text="500"
+            android:textColor="#138510"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="210dp"
+            android:textSize="12dp"
+            android:text="(per Quintal)" />
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
