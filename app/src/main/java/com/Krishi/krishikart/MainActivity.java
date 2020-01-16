@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -32,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         bottomNavigationView=findViewById(R.id.bottomnavigation);
         frameLayout=findViewById(R.id.framelayout);
+        fragment=new HomeFragment();
+        switchFragment(fragment);
         bottomNavigationView.setOnNavigationItemSelectedListener(listView);
     }
     private BottomNavigationView.OnNavigationItemSelectedListener listView=new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -43,10 +47,9 @@ public class MainActivity extends AppCompatActivity {
                     switchFragment(fragment);
                     return true;
                 case R.id.post:
-                    //fragment = new PostFragment();
-                    //switchFragment(fragment);
-                    //return true;
-                    break;
+                    fragment = new PostFragment();
+                    switchFragment(fragment);
+                    return true;
                 case R.id.Add:
                     //fragment = new AddFragment();
                     //switchFragment(fragment);
@@ -59,4 +62,8 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     };
+    public void floatingfunction(View view){
+        Intent intent=new Intent(MainActivity.this,NewpostActivity.class);
+        startActivity(intent);
+    }
 }
