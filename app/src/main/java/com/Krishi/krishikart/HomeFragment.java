@@ -33,8 +33,8 @@ public class HomeFragment extends Fragment {
 
     ProgressDialog progressDialog;
     FirebaseStorage storage = FirebaseStorage.getInstance();
-    StorageReference storageRef = storage.getReference().child("images");
-    DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference().child("Post");
+    StorageReference storageRef = storage.getReference().child("Product Images");
+    DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference().child("Products");
 
     public HomeFragment() {
         // Required empty public constructor
@@ -49,26 +49,30 @@ public class HomeFragment extends Fragment {
 
         getActivity().setTitle("Home");
 
-        linearlist();
+        //linearlist();
         recyclerView.hasFixedSize();
         layoutManager=new LinearLayoutManager(this.getContext());
         recyclerView.setLayoutManager(layoutManager);
-        /*progressDialog = new ProgressDialog(this.getContext());
+        progressDialog = new ProgressDialog(this.getContext());
         progressDialog.setMessage("Please wait...");
         progressDialog.show();
         try {
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot snapshot) {
-
+                    list.clear();
                     for (DataSnapshot postSnapshot : snapshot.getChildren()) {
 
-                        PojoLinear pojoLinear = postSnapshot.getValue(PojoLinear.class);
-                        list.add(pojoLinear);
-                    }*/
+                        //PojoLinear pojoLinear = postSnapshot.getValue(PojoLinear.class);
+                        String image=postSnapshot.child("image").getValue().toString();
+                        String pname=postSnapshot.child("pname").getValue().toString();
+                        String quantity=postSnapshot.child("quantity").getValue().toString();
+                        String price=postSnapshot.child("price").getValue().toString();
+                        list.add(new PojoLinear(image,pname,"kks","2672771267",quantity,price));
+                    }
                     homeAdapter=new HomeAdapter(getContext(),list);
                     recyclerView.setAdapter(homeAdapter);
-                    /*progressDialog.dismiss();
+                    progressDialog.dismiss();
                 }
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
@@ -79,10 +83,10 @@ public class HomeFragment extends Fragment {
         } catch (Exception e ) {
             progressDialog.dismiss();
             Toast.makeText(root.getContext(), "Failed!! "+e.getMessage(), Toast.LENGTH_SHORT).show();
-        }*/
+        }
         return root;
     }
-    public void linearlist(){
+    /*public void linearlist(){
         list.add(new PojoLinear("","Mango","team","1234567812","100","1067"));
         list.add(new PojoLinear("","wheat","team","1234567812","100","1067"));
 
@@ -95,5 +99,5 @@ public class HomeFragment extends Fragment {
         list.add(new PojoLinear("","Mango","team","1234567812","100","1067"));
 
         list.add(new PojoLinear("","Mango","team","1234567812","100","1067"));
-    }
+    }*/
 }
