@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <FrameLayout
         android:id="@+id/framelayout"
         android:layout_width="match_parent"
@@ -23,7 +22,5 @@
         app:itemTextColor="@color/bottom_nav_selected"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_menu" />
-
-
 
 </RelativeLayout>
