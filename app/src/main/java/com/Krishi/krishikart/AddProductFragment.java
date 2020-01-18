@@ -10,13 +10,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.Continuation;
@@ -43,13 +47,13 @@ import static android.widget.Toast.LENGTH_SHORT;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AddProductFragment extends Fragment {
+public class AddProductFragment extends Fragment  implements AdapterView.OnItemSelectedListener{
 
 
     private String CategoryName, Description , Price , Pname,saveCurrentDate,saveCurrentTime;
     private Button AddNewProductButton;
     private ImageView InputProductImage;
-    private EditText InputProductName,InputProductDescription,InputProductPrice;
+    private EditText InputProductDescription,InputProductPrice;
     private static final int GalleryPick=1;
     private Uri ImageUri;
     private String productRandomKey,downloadImageuRL;
@@ -59,6 +63,9 @@ public class AddProductFragment extends Fragment {
 
     private DatabaseReference ProductRef;
     View  root;
+
+    String text="Wheat";
+
 
     FirebaseAuth auth=FirebaseAuth.getInstance();
     FirebaseUser currentUser = auth.getCurrentUser();
@@ -83,12 +90,24 @@ public class AddProductFragment extends Fragment {
 
         AddNewProductButton = (Button) root.findViewById(R.id.add_new_product);
         InputProductImage = (ImageView) root.findViewById(R.id.select_product_image);
-        InputProductName = (EditText) root.findViewById(R.id.product_name);
+
         InputProductDescription = (EditText) root.findViewById(R.id.product_description);
         InputProductPrice = (EditText) root.findViewById(R.id.product_price);
         loadingBar = new ProgressDialog(this.getContext());
         //Toast.makeText(this,CategoryName,Toast.LENGTH_SHORT).show();
         //Toast.makeText(this,"Welcome admin",Toast.LENGTH_SHORT).show();
+
+
+        Spinner spinner=root.findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(root.getContext(), R.array.Add, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+
+
+
+
+
 
         InputProductImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +124,13 @@ public class AddProductFragment extends Fragment {
             }
         });
         return root;
+
+
+
+
+
+
+
     }
 
     private void OpenGallery() {
@@ -129,7 +155,7 @@ public class AddProductFragment extends Fragment {
     {
         Description=InputProductDescription.getText().toString();
         Price=InputProductPrice.getText().toString();
-        Pname=InputProductName.getText().toString();
+        Pname=text;
 
         if(ImageUri==null)
         {
@@ -241,6 +267,18 @@ public class AddProductFragment extends Fragment {
                 }
             }
         });
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        text=parent.getItemAtPosition(position).toString();
+        Toast.makeText(parent.getContext(),"you selected"+text+"Topic",Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
 
     }
 }

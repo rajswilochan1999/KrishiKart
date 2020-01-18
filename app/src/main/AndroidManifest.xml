@@ -11,16 +11,39 @@
         android:theme="@style/AppTheme">
         <activity android:name=".NewpostActivity"></activity>
         <activity android:name=".VerifyphoneActivity" />
+        <activity android:name=".MenActivity"/>
+<!--        <activity android:name=".FCMMessageReceiverServices"-->
         <activity android:name=".PhoneActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"/>
         <activity android:name=".SplashActivity">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name=".FCMMessageReceiverService"
+            android:exported="false">
+
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+
+            </intent-filter>
+
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_filter_vintage_bhagwa"
+            />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/fcmnotificationcolor"
+            />
     </application>
 
 </manifest>
