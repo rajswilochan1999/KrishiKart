@@ -65,12 +65,13 @@ public class MypostFragment extends Fragment {
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot snapshot) {
-
+                    list.clear();
                     for (DataSnapshot postSnapshot : snapshot.getChildren()) {
 
                         PostPojolinear pojoLinear = postSnapshot.getValue(PostPojolinear.class);
                         if(pojoLinear.getUuid().equals(currentUser.getUid().toString()))
-                            list.add(pojoLinear);
+                            if(!list.contains(pojoLinear))
+                                list.add(pojoLinear);
                     }
                     postAdapter=new PostAdapter(root.getContext(),list);
                     recyclerView.setAdapter(postAdapter);
