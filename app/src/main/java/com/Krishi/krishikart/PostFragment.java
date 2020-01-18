@@ -13,6 +13,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -37,7 +38,6 @@ public class PostFragment extends Fragment {
         View root=inflater.inflate(R.layout.fragment_post, container, false);
 
         getActivity().setTitle("Post");
-
         tabLayout=root.findViewById(R.id.tabs);
         viewPager=root.findViewById(R.id.viewpager);
         //getSupportActionBar().setElevation(0);
