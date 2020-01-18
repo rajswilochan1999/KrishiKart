@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1051539232443-fi7a3retfamuohf8sj6938a9mtblei66.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Krishi.krishikart",
+            "certificate_hash": "9d8e47fffec5e6e487d2b8ed4e7376174b7c4285"
+          }
+        },
+        {
           "client_id": "1051539232443-6a4v97aqnoj6bknkkn9pb9mughdbm6tj.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

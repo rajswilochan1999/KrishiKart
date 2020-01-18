@@ -37,7 +37,7 @@ public class HomeFragment extends Fragment {
     DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference().child("Products");
 
     public HomeFragment() {
-        // Required empty public constructor
+
     }
 
 
