@@ -26,6 +26,7 @@ public class VerifyphoneActivity extends AppCompatActivity {
     private String verificationId;
     private EditText code;
     private FirebaseAuth auth;
+    String mobile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class VerifyphoneActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         code = (EditText) findViewById(R.id.otp);
         Intent intent = getIntent();
-        String mobile = intent.getStringExtra("mobile");
+        mobile = intent.getStringExtra("mobile");
         sendVerificationCode(mobile);
     }
 
@@ -106,8 +107,9 @@ public class VerifyphoneActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             //verification successful we will start the profile activity
-                            Intent intent = new Intent(VerifyphoneActivity.this, MainActivity.class);
+                            Intent intent = new Intent(VerifyphoneActivity.this, UsernameActivity.class);
                             //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            intent.putExtra("mobile", mobile);
                             finish();
                             startActivity(intent);
 

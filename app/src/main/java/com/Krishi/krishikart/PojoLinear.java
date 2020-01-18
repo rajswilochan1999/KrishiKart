@@ -7,17 +7,19 @@ public class PojoLinear {
     private String phonenumber;
     private String productquantity;
     private String pricerange;
+    private String date;
 
     public  PojoLinear() {
     }
 
-    public PojoLinear(String productimage, String productname, String username, String phonenumber, String productquantity, String pricerange) {
+    public PojoLinear(String productimage, String productname, String username, String phonenumber, String productquantity, String pricerange,String date) {
         this.productimage = productimage;
         this.productname = productname;
         this.username = username;
         this.phonenumber = phonenumber;
         this.productquantity = productquantity;
         this.pricerange = pricerange;
+        this.date=date;
     }
 
     public String getProductimage() {
@@ -66,5 +68,13 @@ public class PojoLinear {
 
     public void setPricerange(String pricerange) {
         this.pricerange = pricerange;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

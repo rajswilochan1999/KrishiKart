@@ -6,17 +6,19 @@ public class PostPojolinear {
     private String postdate;
     private String postmessage;
     private String postimage;
+    private String posttime;
     private String uuid;
 
     public  PostPojolinear() {
 
     }
-    public PostPojolinear(String circularimage, String postusername, String postdate, String postmessage, String postimage,String uuid) {
+    public PostPojolinear(String circularimage, String postusername, String postdate, String postmessage, String postimage,String posttime,String uuid) {
         this.circularimage = circularimage;
         this.postusername = postusername;
         this.postdate = postdate;
         this.postmessage = postmessage;
         this.postimage = postimage;
+        this.posttime=posttime;
         this.uuid=uuid;
     }
 
@@ -66,5 +68,13 @@ public class PostPojolinear {
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
+    }
+
+    public String getPosttime() {
+        return posttime;
+    }
+
+    public void setPosttime(String posttime) {
+        this.posttime = posttime;
     }
 }

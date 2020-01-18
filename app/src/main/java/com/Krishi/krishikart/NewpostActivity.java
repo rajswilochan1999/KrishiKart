@@ -14,14 +14,18 @@ import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -29,11 +33,16 @@ import com.google.firebase.storage.UploadTask;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Collections;
+
 public class NewpostActivity extends AppCompatActivity {
 
     private Button btnChoose, btnUpload;
     private CropImageView imageView;
     private EditText chatdes;
+private TextView username;
 
     private boolean isChanged = false;
     private Uri filePath=null;
@@ -41,24 +50,48 @@ public class NewpostActivity extends AppCompatActivity {
     private FirebaseStorage storage;
     private StorageReference storageReference;
     private DatabaseReference databaseReference;
+    private DatabaseReference databaseReference2;
 
     FirebaseAuth auth=FirebaseAuth.getInstance();
     FirebaseUser currentUser = auth.getCurrentUser();
+    Calendar calendar= Calendar.getInstance();
+    SimpleDateFormat currretdate=new SimpleDateFormat("dd, MM, yyyy");
+    String saveCurrentDate=currretdate.format(calendar.getTime());
+
+    SimpleDateFormat currentTime=new SimpleDateFormat("HH:mm:ss");
+    String saveCurrentTime=currentTime.format(calendar.getTime());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newpost);
-
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
+        storageReference = storage.getReference();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Post");
+        //databaseReference2 = FirebaseDatabase.getInstance().getReference().child(currentUser.getUid().toString());
         chatdes=(EditText) findViewById(R.id.postmsg);
         btnChoose = (Button) findViewById(R.id.imagepost);
         btnUpload = (Button) findViewById(R.id.sendpost);
         imageView = (CropImageView) findViewById(R.id.cropImageView);
+        username=(TextView)findViewById(R.id.postusername);
         ActionBar actionBar=getSupportActionBar();
         actionBar.setTitle("Add Post");
+        /*databaseReference2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+                    if(postSnapshot.getValue().toString().equals(currentUser.getUid().toString())) {
+                        final String username=postSnapshot.child("username").getValue().toString();
+                        break;
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(NewpostActivity.this, "Failed "+databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });*/
         actionBar.setDisplayHomeAsUpEnabled(true);
         btnChoose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,7 +166,7 @@ public class NewpostActivity extends AppCompatActivity {
                                     progressDialog.dismiss();
                                     String message = chatdes.getText().toString().trim();
                                     String name = "Kalpesh";
-                                    PostPojolinear pojoLinear = new PostPojolinear("", name, "Today",message,imageURL.toString(),currentUser.getUid().toString());
+                                    PostPojolinear pojoLinear = new PostPojolinear("", name, saveCurrentDate,message,imageURL.toString(),saveCurrentTime,currentUser.getUid().toString());
 
                                     String postid = databaseReference.push().getKey();
 
@@ -165,7 +198,7 @@ public class NewpostActivity extends AppCompatActivity {
         else if(!chatdes.getText().toString().equals("")){
             String message = chatdes.getText().toString().trim();
             String name = "kalpesh";
-            PostPojolinear pojoLinear = new PostPojolinear("", name, "Today",message,"",currentUser.getUid().toString());
+            PostPojolinear pojoLinear = new PostPojolinear("", name, saveCurrentDate,message,"",saveCurrentTime,currentUser.getUid().toString());
             String postid = databaseReference.push().getKey();
 
             databaseReference.child(postid).setValue(pojoLinear);

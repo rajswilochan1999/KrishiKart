@@ -41,6 +41,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyHolder>{
         myHolder.productname.setText(pojoLinears.get(i).getProductname());
         myHolder.productquantity.setText(pojoLinears.get(i).getProductquantity());
         myHolder.pricerange.setText(pojoLinears.get(i).getPricerange());
+        myHolder.date.setText(pojoLinears.get(i).getDate());
     }
     @Override
     public int getItemCount(){
@@ -48,7 +49,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyHolder>{
     }
     public static class MyHolder extends RecyclerView.ViewHolder{
 
-        TextView username,productname,phonenumber,productquantity,pricerange;
+        TextView username,productname,phonenumber,productquantity,pricerange,date;
         ImageView productimage;
 
         public MyHolder(@NonNull View itemView){
@@ -61,6 +62,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyHolder>{
             phonenumber=itemView.findViewById(R.id.phonenumber);
             productquantity=itemView.findViewById(R.id.productquantity);
             pricerange=itemView.findViewById(R.id.pricerange);
+            date=itemView.findViewById(R.id.postdate);
         }
     }
 }
