@@ -22,6 +22,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class HomeFragment extends Fragment {
 
@@ -70,6 +71,7 @@ public class HomeFragment extends Fragment {
                         String price=postSnapshot.child("price").getValue().toString();
                         list.add(new PojoLinear(image,pname,"kks","2672771267",quantity,price));
                     }
+                    Collections.reverse(list);
                     homeAdapter=new HomeAdapter(getContext(),list);
                     recyclerView.setAdapter(homeAdapter);
                     progressDialog.dismiss();
