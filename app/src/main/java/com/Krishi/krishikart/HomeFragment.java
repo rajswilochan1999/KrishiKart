@@ -69,7 +69,8 @@ public class HomeFragment extends Fragment {
                         String pname=postSnapshot.child("pname").getValue().toString();
                         String quantity=postSnapshot.child("quantity").getValue().toString();
                         String price=postSnapshot.child("price").getValue().toString();
-                        list.add(new PojoLinear(image,pname,"kks","2672771267",quantity,price));
+                        String date=postSnapshot.child("date").getValue().toString();
+                        list.add(new PojoLinear(image,pname,"kks","2672771267",quantity,price,date));
                     }
                     Collections.reverse(list);
                     homeAdapter=new HomeAdapter(getContext(),list);
