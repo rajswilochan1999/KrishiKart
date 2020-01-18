@@ -15,38 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "1051539232443-214rnj5pqviu27scq32851mt2l2bfmlv.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.Krishi.krishikart",
-            "certificate_hash": "d0d82fcf4d9157f7cb0ac005747f995e75c78c1a"
-          }
-        },
-        {
-          "client_id": "1051539232443-g30ftvgjtbuip9fi66fdn4ivafqt8cd8.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.Krishi.krishikart",
-            "certificate_hash": "feec137fbaa37b81362287b0f9ccbd1c0a5b57ce"
-          }
-        },
-        {
-          "client_id": "1051539232443-rmf6u91f1t8omijjv9g10hdpi7lp9i22.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.Krishi.krishikart",
-            "certificate_hash": "9092729407fc1c799b4dfa3fac4b4ac3841cff51"
-          }
-        },
-        {
-          "client_id": "1051539232443-fi7a3retfamuohf8sj6938a9mtblei66.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.Krishi.krishikart",
-            "certificate_hash": "9d8e47fffec5e6e487d2b8ed4e7376174b7c4285"
-          }
-        },
-        {
           "client_id": "1051539232443-6a4v97aqnoj6bknkkn9pb9mughdbm6tj.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

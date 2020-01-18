@@ -1,38 +1,17 @@
 <resources>
     <string name="app_name">KrishiKart</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="add_product">Add Product</string>
-    <string name="product_price_in_rs">Product Price(in rs)</string>
-
-    <string name="default_notification_channel_id">dncid</string>
-    <string name="subscribe_topic">SUBSCRIBE TOPIC</string>
-    <string name="unsubscribe_topic">UNSUBSCRIBE TOPIC</string>
-
-    <string-array name="Add" >
-    <item >Wheat</item>
-    <item>Corn</item>
-    <item>Lentil</item>
-    <item>Rice</item>
-    <item >Wheat1</item>
-    <item>Corn1</item>
-    <item>Lentil1</item>
-    <item>Rice1</item>
-
-    </string-array>
-
-    <string-array name="numbers" >
-    <item >Wheat</item>
-    <item>Dry_Fruits</item>
-    <item>Fertilizers</item>
-    <item>Natural_Fertilizers</item>
-    <item>Government_programs</item>
-    <item>Weather</item>
-    <item>New_technologies</item>
-    <item>Datas</item>
-    <item>Prizes</item>
-
-    </string-array>
-
+    <string name="swipe_left_for_register">Swipe Left for Register</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="e_mail">Email</string>
+    <string name="tag">Let\'s join us and \nBuild your relationship with others</string>
+    <string name="swipe_right_for_login">Swipe Right for Login</string>
+    <string name="register">Register</string>
+    <string name="re_type_password">Re-type Password</string>
+    <string name="your_name">Full Name</string>
+    <string name="editName">RamMadhav</string>
+    <string name="editPhone">dfghj</string>
+    <string name="editAddress">hzdjgxfhc</string>
+    <string name="saveChange">Save Changes</string>
 </resources>

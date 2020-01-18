@@ -25,6 +25,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 /**
@@ -72,6 +73,7 @@ public class AllpostFragment extends Fragment {
                         PostPojolinear pojoLinear = postSnapshot.getValue(PostPojolinear.class);
                             list.add(pojoLinear);
                     }
+                    Collections.reverse(list);
                     postAdapter = new PostAdapter(getContext(), list);
                     recyclerView.setAdapter(postAdapter);
                     progressDialog.dismiss();

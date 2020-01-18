@@ -132,7 +132,7 @@ public class NewpostActivity extends AppCompatActivity {
                                 public void onSuccess(Uri imageURL){
                                     progressDialog.dismiss();
                                     String message = chatdes.getText().toString().trim();
-                                    String name = "kalpesh";
+                                    String name = "Kalpesh";
                                     PostPojolinear pojoLinear = new PostPojolinear("", name, "Today",message,imageURL.toString(),currentUser.getUid().toString());
 
                                     String postid = databaseReference.push().getKey();
