@@ -100,7 +100,8 @@ public class NewpostActivity extends AppCompatActivity {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             if (resultCode == RESULT_OK) {
                 filePath = result.getUri();
-                imageView.setImageUriAsync(filePath);
+                btnChoose.setText("Image selected");
+                //imageView.setImageUriAsync(filePath);
 
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
 
@@ -137,10 +138,10 @@ public class NewpostActivity extends AppCompatActivity {
                                     String postid = databaseReference.push().getKey();
 
                                     databaseReference.child(postid).setValue(pojoLinear);
-                                    Intent intent = new Intent(NewpostActivity.this, MainActivity.class);
+                                    //Intent intent = new Intent(NewpostActivity.this, MainActivity.class);
                                     finish();
-                                    startActivity(intent);
-                                    //onBackPressed();
+                                    //startActivity(intent);
+                                    onBackPressed();
                                     Toast.makeText(NewpostActivity.this, "Uploaded", Toast.LENGTH_SHORT).show();
                                 }
                             });
@@ -168,9 +169,10 @@ public class NewpostActivity extends AppCompatActivity {
             String postid = databaseReference.push().getKey();
 
             databaseReference.child(postid).setValue(pojoLinear);
-            Intent intent = new Intent(NewpostActivity.this, MainActivity.class);
+            //Intent intent = new Intent(NewpostActivity.this, MainActivity.class);
             finish();
-            startActivity(intent);
+            //startActivity(intent);
+            onBackPressed();
             Toast.makeText(NewpostActivity.this, "Uploaded!", Toast.LENGTH_SHORT).show();
         }
     }
