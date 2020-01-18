@@ -56,6 +56,18 @@ public class MainActivity extends AppCompatActivity {
                 finish();
                 startActivity(intent);
                 return true;
+
+            case R.id.notification:
+
+                Intent intent1=new Intent(this,MenActivity.class);
+                finish();
+                startActivity(intent1);
+
+                return true;
+
+
+
+
             default:
                 return super.onOptionsItemSelected(item);
         }
