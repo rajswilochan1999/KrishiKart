@@ -15,4 +15,6 @@
     <string name="editAddress">hzdjgxfhc</string>
     <string name="saveChange">Save Changes</string>
     <string name="Save">Save</string>
+    <string name="do_you_want_to_book_a_courier">Do you Want to book a courier</string>
+    <string name="ok">Ok</string>
 </resources>
