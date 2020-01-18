@@ -4,6 +4,7 @@ public class User {
     private String name;
     private String phone;
     private String address;
+    private String imageurl;
 
     public String getName() {
         return name;
@@ -27,5 +28,14 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+
+    public String getImageurl() {
+        return imageurl;
+    }
+
+    public void setImageurl(String imageurl) {
+        this.imageurl = imageurl;
     }
 }

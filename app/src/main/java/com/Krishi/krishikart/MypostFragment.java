@@ -71,7 +71,6 @@ public class MypostFragment extends Fragment {
 
                         PostPojolinear pojoLinear = postSnapshot.getValue(PostPojolinear.class);
                         if(pojoLinear.getUuid().equals(currentUser.getUid().toString()))
-                            if(!list.contains(pojoLinear))
                                 list.add(pojoLinear);
                     }
                     Collections.reverse(list);
