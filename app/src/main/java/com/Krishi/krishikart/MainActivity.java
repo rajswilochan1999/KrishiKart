@@ -59,11 +59,17 @@ public class MainActivity extends AppCompatActivity {
                     switchFragment(fragment);
                     return true;
             }
+
             return false;
         }
     };
     public void floatingfunction(View view){
         Intent intent=new Intent(MainActivity.this,NewpostActivity.class);
         startActivity(intent);
+    }
+    public void editProfile(View view){
+        Intent intent=new Intent(MainActivity.this,editProfile.class);
+        startActivity(intent);
+
     }
 }

@@ -48,58 +48,58 @@
             android:paddingBottom="24dp">
 
 
-            <Button
-                android:id="@+id/edit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@color/colorMain"
-                android:drawableTop="@drawable/editbutton"
-                android:text="EDIT"
 
 
-                />
-
-
-            <TextView
+            <EditText
                 android:id="@+id/editName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="70dp"
-                android:text="Laxman Marothiya"
+                android:text="@string/editName"
                 android:textColor="#fff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <EditText
                 android:id="@+id/editAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/editPhone"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:text="Surat"
+                android:text="@string/editAddress"
                 android:textColor="#fff"
                 android:textSize="16sp" />
 
-            <TextView
+            <EditText
                 android:id="@+id/editPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/editName"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:text="(Adhyaksh)"
+                android:text="@string/editPhone"
                 android:textColor="#fff"
                 android:textSize="18sp" />
         </RelativeLayout>
 
+        <Button
+            android:id="@+id/saveChanges"
+            android:layout_width="118dp"
+            android:layout_height="59dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="157dp"
+            android:layout_marginTop="429dp"
+            android:layout_marginEnd="136dp"
+            android:layout_marginBottom="243dp"
+            android:text="@string/saveChange" />
 
-        </RelativeLayout>
+
+    </RelativeLayout>
 </RelativeLayout>
 
 
